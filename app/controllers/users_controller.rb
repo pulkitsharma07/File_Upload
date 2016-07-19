@@ -16,10 +16,10 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find_by_username(params[:username])
-    if !!@user.authenticate(params[:password])
+
+    if @user && !!@user.authenticate(params[:password])
       session[:user_id] = @user.id
     end
-
     redirect_to '/'
   end
 

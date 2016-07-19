@@ -22,5 +22,12 @@ class FilesController < ApplicationController
   end
 
   def download
+    file = UploadedFile.find(params[:file_id])
+
+    p " Downloading ", file.inspect
+
+    data = File.read(file.location)
+
+    send_data data, disposition: 'attachment',filename: file.name
   end
 end

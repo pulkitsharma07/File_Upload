@@ -1,7 +1,4 @@
 <div>
-  <table style="width:100%">
-  <tr>
-    <td><%= file.name %></td>
-    <td>Download this file </td>
-  </table>
-<div>
+    <p><%= file.name %></p>
+    <%= link_to "Download", controller: :files, action: :download, file_id: file.id %>
+</div>
