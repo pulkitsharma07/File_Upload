@@ -4,6 +4,10 @@
 
   <p>Your list of files </p>
 
+  <% current_user.uploaded_files.each do |file| %>
+    <%= render "file", file: file %>
+  <% end %>
+
 
   <%= button_to "Log Out",controller: :users, action: :logout%>
 
