@@ -1,4 +1,3 @@
 <div>
-    <p><%= file.name %></p>
-    <%= link_to "Download", controller: :files, action: :download, file_id: file.id %>
+    <%= link_to "Download " + file.name, controller: :files, action: :download, file_id: file.id %>
 </div>

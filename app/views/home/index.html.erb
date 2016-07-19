@@ -1,6 +1,6 @@
 <% if current_user %>
   
-  <h1> HELLO <%= current_user.name %> </h1>
+  <h1> Hello <%= current_user.name %> </h1>
 
   <%= form_tag({action: 'upload',controller: 'files'}, :multipart => true) do %>
     <p><label for="upload_file">Select File</label>
@@ -18,10 +18,6 @@
   <%= button_to "Log Out",controller: :users, action: :logout%>
 
 <% else %>
-<h1> Please Sign in or Register </h1>
-
-<%= link_to "Register", controller: :users, action: :new %>
-
 <h1>Login</h1>
 
 <%= form_tag '/login' do %>
@@ -32,4 +28,7 @@
 
 <% end %>
 
+<h1> Please Sign in or Register </h1>
+
+<%= link_to "Register", controller: :users, action: :new %>
 <% end %>
