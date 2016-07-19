@@ -2,6 +2,12 @@
   
   <h1> HELLO <%= current_user.name %> </h1>
 
+  <%= form_tag({action: 'upload',controller: 'files'}, :multipart => true) do %>
+    <p><label for="upload_file">Select File</label>
+    <%= file_field 'upload', 'datafile' %></p>
+    <%= submit_tag "Upload" %>
+  <% end %>
+
   <p>Your list of files </p>
 
   <% current_user.uploaded_files.each do |file| %>
