@@ -1,0 +1,18 @@
+<h1>Register!</h1>
+
+
+<%= form_for @user, url: '/create' do |f| %>
+
+<%= @user.errors.full_messages if @user && @user.errors.any? %>
+
+  Name: <%= f.text_field :name %>
+
+  Username: <%= f.text_field :username %>
+
+  Password: <%= f.password_field :password %>
+
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  
+  <%= f.submit "Submit" %>
+
+<% end %>
