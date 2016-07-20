@@ -13,7 +13,7 @@ class FilesController < ApplicationController
 
     Dir.mkdir(save_location) unless File.directory?(save_location)
 
-    new_file_name = Digest::MD5.hexdigest(current_user.password_digest + file_name)
+    new_file_name = Digest::MD5.hexdigest(current_user.password_digest + file_name + Time.now.to_s)
 
     File.open(save_location + '/' + new_file_name, "wb") do |f|
             f.write(file)
