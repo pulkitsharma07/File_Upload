@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   post 'files/upload'
 
   get 'files/download'
-
+  get 'files/delete'
   get 'users/create'
 
   root 'home#index'

@@ -2,5 +2,6 @@
   <tr>
     <td><%= link_to "#{file.name}", controller: :files, action: :download, file_id: file.id %></td>
     <td><%= time_ago_in_words(file.created_at) + " ago "%></td>
+    <td><%= link_to "Delete",controller: :files, action: :delete, file_id: file.id %></td>
   </tr>
 </div>
