@@ -3,7 +3,7 @@ class FilesController < ApplicationController
 
   def upload
     if params[:upload].nil?
-      redirect_to '/',flash: {error: "Please select a file"}
+      redirect_to '/', flash: {error: "Please select a file"}
       return
     end
     upload = params[:upload]

@@ -19,8 +19,10 @@ class UsersController < ApplicationController
 
     if @user && !!@user.authenticate(params[:password])
       session[:user_id] = @user.id
+      redirect_to '/'
+    else
+      redirect_to '/', flash: {error: "Invalid username or password"}
     end
-    redirect_to '/'
   end
 
   def logout

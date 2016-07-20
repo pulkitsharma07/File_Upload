@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <%=flash[:error] if flash[:error]%>
+    <p style="background-color: red;"><%=flash[:error] if flash[:error]%></p>
     <%= yield %>
   </body>
 </html>
