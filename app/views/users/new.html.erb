@@ -3,7 +3,7 @@
 
 <%= form_for @user, url: '/create' do |f| %>
 
-<%= @user.errors.full_messages if @user && @user.errors.any? %>
+<p style="background-color:red;"> <%= @user.errors.full_messages.first if @user && @user.errors.any? %></p>
 
   Name: <%= f.text_field :name %>
 
