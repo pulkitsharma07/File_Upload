@@ -1,9 +1,13 @@
 <h1>Register!</h1>
 
 
-<%= form_for @user, url: '/create' do |f| %>
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |msg| %>
+    <p style="background-color:red;"> <%= msg %></p>
+  <% end %>
+<% end %>
 
-<p style="background-color:red;"> <%= @user.errors.full_messages.first if @user && @user.errors.any? %></p>
+<%= form_for @user, url: '/create' do |f| %>
 
   Name: <%= f.text_field :name %>
 
