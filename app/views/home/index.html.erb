@@ -9,10 +9,14 @@
   <% end %>
 
   <p>Your list of files </p>
+    <table style="table-layout: fixed; width:100%; margin:20px; " border="3" cellpadding="10">
+      <th>File Name</th>
+      <th>Uploaded</th>
+      <% current_user.uploaded_files.order(created_at: :desc).each do |file| %>
+        <%= render "file", file: file %>
+      <% end %>
 
-  <% current_user.uploaded_files.each do |file| %>
-    <%= render "file", file: file %>
-  <% end %>
+    </table>
 
 
   <%= button_to "Log Out",controller: :users, action: :logout%>

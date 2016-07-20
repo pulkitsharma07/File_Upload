@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>FileUpload</title>
+    <style>
+
+    </style>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +12,7 @@
   </head>
 
   <body>
+    <%=flash[:error] if flash[:error]%>
     <%= yield %>
   </body>
 </html>

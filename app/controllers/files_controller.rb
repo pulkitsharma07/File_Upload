@@ -2,6 +2,10 @@ class FilesController < ApplicationController
   before_filter :authorize
 
   def upload
+    if params[:upload].nil?
+      redirect_to '/',flash: {error: "Please select a file"}
+      return
+    end
     upload = params[:upload]
     file_name = upload['datafile'].original_filename if upload['datafile'] != ''
     file = upload['datafile'].read
