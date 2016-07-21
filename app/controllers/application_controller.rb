@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def authorize
-    redirect_to '/register' unless current_user
+    unless current_user
+      redirect_to '/register'
+      #false
+    end
   end
 end

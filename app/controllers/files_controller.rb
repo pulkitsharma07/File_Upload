@@ -31,6 +31,6 @@ class FilesController < ApplicationController
   private
 
   def current_file
-    UploadedFile.find(params[:file_id])
+    current_user.uploaded_files.find(params[:file_id])
   end
 end
