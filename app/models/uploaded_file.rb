@@ -21,6 +21,11 @@ class UploadedFile < ApplicationRecord
     p "Uploaded : #{file_name}", file.size, current_user
   end
 
+
+  def read_file
+    File.read(location)
+  end
+
   def delete_file
     File.delete(location)
     puts location + ' File Deleted'
