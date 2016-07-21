@@ -19,7 +19,7 @@ class FilesController < ApplicationController
             f.write(file)
     end
 
-    current_user.uploaded_files << UploadedFile.new(name: file_name, location: save_location + '/' + new_file_name)
+    current_user.uploaded_files << UploadedFile.new(name: file_name, location: save_location + '/' + new_file_name, size: file.size)
 
     p "Uploaded : #{file_name}", file.size, current_user
     redirect_to '/'

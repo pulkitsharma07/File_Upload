@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719093919) do
+ActiveRecord::Schema.define(version: 20160721060900) do
 
   create_table "uploaded_files", force: :cascade do |t|
     t.integer  "user_id"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160719093919) do
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "size"
     t.index ["user_id"], name: "index_uploaded_files_on_user_id"
   end
 
